@@ -6,10 +6,13 @@ import {
   Alert,
   ScrollView,
   Pressable,
+  TextInput,
 } from "react-native";
 import * as Location from "expo-location";
 import Entypo from "@expo/vector-icons/Entypo";
 import { Colors } from "@/constants/Colors";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import Carosuel from "@/components/Carosuel";
 
 const Index = () => {
   const [locationEnabled, setLocationEnabled] = useState<boolean>(false);
@@ -69,9 +72,7 @@ const Index = () => {
   }, []);
 
   return (
-    <ScrollView
-      style={[styles.container, { backgroundColor: Colors.light.background }]}
-    >
+    <>
       <View style={styles.titleContainer}>
         <Entypo name="location" size={24} color={Colors.light.locationIcon} />
         <View style={{ flex: 1 }}>
@@ -98,7 +99,26 @@ const Index = () => {
           <Text style={{ color: Colors.light.text }}>K</Text>
         </Pressable>
       </View>
-    </ScrollView>
+
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          borderWidth: 1,
+          borderColor: "Red",
+          paddingHorizontal: 10,
+          paddingVertical: 5,
+          marginTop: 10,
+          marginHorizontal: 10,
+          borderRadius: 15,
+        }}
+      >
+        <TextInput placeholder="Search for foods, hotels" />
+        <AntDesign name="search1" size={24} color={Colors.light.locationIcon} />
+      </View>
+      <Carosuel />
+    </>
   );
 };
 
