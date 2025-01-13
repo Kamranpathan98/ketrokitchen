@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   Alert,
-  ScrollView,
   Pressable,
   TextInput,
 } from "react-native";
@@ -14,7 +13,7 @@ import { Colors } from "@/constants/Colors";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Carosuel from "@/components/Carosuel";
 
-const Index = () => {
+const HomePage = () => {
   const [locationEnabled, setLocationEnabled] = useState<boolean>(false);
   const [displayCurrentAddress, setDisplayCurrentAddress] = useState<string>(
     "Fetching your location.."
@@ -122,7 +121,7 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default HomePage;
 
 const styles = StyleSheet.create({
   container: {
