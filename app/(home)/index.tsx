@@ -131,7 +131,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
-    marginTop: 40,
     padding: 10,
   },
   pressable: {
