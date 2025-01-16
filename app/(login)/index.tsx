@@ -24,7 +24,7 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
         <View style={styles.container}>
             {/* Image at the top */}
             <Image
-                source={require('@/assets/images/favicon.png')} // Use require to import the image
+                source={require('@/assets/images/Logo-101.jpg')} // Use require to import the image
                 style={styles.image}
                 resizeMode="cover" // Adjust the image to cover the area
             />
@@ -54,8 +54,11 @@ const styles = StyleSheet.create({
     },
     image: {
         width: '100%', // Full width
-        height: 200, // Adjust height as needed
-        marginBottom: 20, // Space between image and header
+        height: '45%', // Half the screen height
+        borderBottomLeftRadius: 50, // Curved border at the bottom left
+        borderBottomRightRadius: 50, // Curved border at the bottom right
+        overflow: 'hidden', // Ensure the curve is visible by clipping overflow
+        marginBottom: 20, // Space between the image and header
     },
     header: {
         flexDirection: 'row',
@@ -69,7 +72,7 @@ const styles = StyleSheet.create({
     },
     input: {
         height: 50,
-        width: '100%',
+        width: '90%', // Adjusted width for better alignment
         borderColor: '#6200ee',
         borderWidth: 1,
         borderRadius: 5,
