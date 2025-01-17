@@ -24,7 +24,7 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
         <View style={styles.container}>
             {/* Image at the top */}
             <Image
-                source={require('@/assets/images/Logo-101.jpg')} // Use require to import the image
+                source={require('@/assets/images/Logo-102.jpg')} // Use require to import the image
                 style={styles.image}
                 resizeMode="cover" // Adjust the image to cover the area
             />
@@ -51,12 +51,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-start', // Align items to the top
         alignItems: 'center',
+        // backgroundColor: '#C2FFC7'
     },
     image: {
         width: '100%', // Full width
-        height: '45%', // Half the screen height
-        borderBottomLeftRadius: 50, // Curved border at the bottom left
-        borderBottomRightRadius: 50, // Curved border at the bottom right
+        height: '35%', // Half the screen height
+        borderBottomLeftRadius: 30, // Curved border at the bottom left
+        borderBottomRightRadius: 30, // Curved border at the bottom right
         overflow: 'hidden', // Ensure the curve is visible by clipping overflow
         marginBottom: 20, // Space between the image and header
     },
