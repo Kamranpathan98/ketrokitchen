@@ -11,6 +11,7 @@ import { Card } from "react-native-paper"; // Import Card from react-native-pape
 import { Rating } from "react-native-ratings"; // Import Rating component
 import { Colors } from "@/constants/Colors";
 import { dataTest, horizontalData } from "@/constants/Data";
+import OfferSlider from "./OfferSlider";
 
 const Carosuel = () => {
   // Render the horizontal FlatList as the header
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.2,
     shadowRadius: 4,
-    backgroundColor: 'white'
+    backgroundColor: "white",
   },
   cardContent: {
     flexDirection: "row", // Align items in a row

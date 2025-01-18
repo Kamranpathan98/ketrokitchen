@@ -4,9 +4,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Entypo from "@expo/vector-icons/Entypo";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import HomePage from "./(home)";
 import LoginScreen from "@/app/(login)/index"; /// Import the LoginScreen
 import { View, Text, StyleSheet } from "react-native";
+import HomeScreen from "@/src/screens/HomeScreen";
 
 // Screen components
 const CartScreen = () => (
@@ -55,7 +55,7 @@ const MainTabs = () => {
         };
       }}
     >
-      <Tab.Screen name="Home" component={HomePage} />
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Cart" component={CartScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
