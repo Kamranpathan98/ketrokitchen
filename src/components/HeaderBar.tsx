@@ -62,7 +62,7 @@ const HeaderBar = () => {
       }, []);
   return (
     <View style={styles.titleContainer}>
-      <StatusBar backgroundColor={"orange"} />
+      <StatusBar backgroundColor={"green"} />
       <Entypo name="location" size={24} color={Colors.light.locationIcon} />
       <View style={{ flex: 1 }}>
         <Text

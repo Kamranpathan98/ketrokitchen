@@ -7,6 +7,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import LoginScreen from "@/app/(login)/index"; /// Import the LoginScreen
 import { View, Text, StyleSheet } from "react-native";
 import HomeScreen from "@/src/screens/HomeScreen";
+import HotelScreen from "@/src/screens/HotelScreen";
 
 // Screen components
 const CartScreen = () => (
@@ -64,7 +65,7 @@ const MainTabs = () => {
 
 const Index = () => {
   return (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName="Main">
       <Stack.Screen
         name="Login"
         component={LoginScreen}
@@ -73,6 +74,11 @@ const Index = () => {
       <Stack.Screen
         name="Main"
         component={MainTabs}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="HotelScreen"
+        component={HotelScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

@@ -4,33 +4,14 @@ import {
   FlatList,
   View,
   Image,
-  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { Card } from "react-native-paper"; // Import Card from react-native-paper
 import { Rating } from "react-native-ratings"; // Import Rating component
 import { Colors } from "@/constants/Colors";
-import { dataTest, horizontalData } from "@/constants/Data";
-import OfferSlider from "./OfferSlider";
+import { dataTest } from "@/constants/Data";
 
 const Carosuel = () => {
-  // Render the horizontal FlatList as the header
-  const renderHorizontalList = () => (
-    <FlatList
-      data={horizontalData}
-      renderItem={({ item }) => (
-        <TouchableOpacity style={styles.horizontalItemContainer}>
-          <Image source={{ uri: item.uri }} style={styles.horizontalImage} />
-          <Text style={styles.horizontalItemText}>{item.name}</Text>
-        </TouchableOpacity>
-      )}
-      keyExtractor={(item, index) => item.name + index} // Unique key for each item
-      horizontal={true} // Set to true for horizontal scrolling
-      showsHorizontalScrollIndicator={false} // Hide horizontal scroll indicator
-      contentContainerStyle={styles.horizontalListContainer} // Style for the horizontal list
-    />
-  );
-
   return (
     <View style={styles.container}>
       <FlatList
@@ -62,7 +43,6 @@ const Carosuel = () => {
         keyExtractor={(item, index) => item.name + index} // Unique key for each item
         contentContainerStyle={styles.contentContainer} // Style for the content container
         showsVerticalScrollIndicator={false}
-        ListHeaderComponent={renderHorizontalList} // Use the horizontal list as the header
       />
     </View>
   );
@@ -122,28 +102,5 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingBottom: 20,
-  },
-
-  horizontalItemContainer: {
-    backgroundColor: "transparent",
-    borderRadius: 20,
-    padding: 15,
-    marginRight: 5,
-  },
-  horizontalImage: {
-    width: 60,
-    height: 50,
-    marginBottom: 5,
-  },
-
-  horizontalItemText: {
-    textAlign: "center",
-    color: Colors.light.locationIcon,
-    fontSize: 14,
-    fontWeight: "bold",
-  },
-
-  horizontalListContainer: {
-    paddingBottom: 5,
   },
 });

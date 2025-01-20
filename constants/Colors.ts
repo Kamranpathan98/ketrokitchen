@@ -15,7 +15,9 @@ export const Colors = {
     secondaryText: 'gray',
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
-    locationIcon: '#E52850'
+    locationIcon: '#E52850',
+    goldenYellow: '#ffc107',
+    darkGreen: '#01461b'
   },
   dark: {
     text: '#ECEDEE',
