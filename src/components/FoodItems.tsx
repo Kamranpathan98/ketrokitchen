@@ -1,14 +1,41 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { MenuCategory } from "@/types/Datatypes";
+import { AntDesign } from "@expo/vector-icons";
+import MenuItems from "./MenuItems";
 
-const FoodItems = () => {
-  return (
-    <View>
-      <Text>FoodItems</Text>
-    </View>
-  )
+interface FoodItemsProps {
+  item: MenuCategory;
 }
 
-export default FoodItems
+const FoodItems: React.FC<FoodItemsProps> = ({ item }) => {
+  const data = [item];
+  return (
+    <View>
+      {data.map((item, index) => (
+        <React.Fragment key={index}>
+          <Pressable style={styles.container}>
+            <Text>
+              {item.name} ({item.items.length})
+            </Text>
+            <AntDesign name="down" size={15} color="black" />
+          </Pressable>
+          {item.items.map((menu, id) => (
+            <MenuItems key={id} item={menu} />
+          ))}
+        </React.Fragment>
+      ))}
+    </View>
+  );
+};
 
-const styles = StyleSheet.create({})
+export default FoodItems;
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    margin: 10,
+  },
+});

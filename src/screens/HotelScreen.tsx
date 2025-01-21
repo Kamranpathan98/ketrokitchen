@@ -11,6 +11,7 @@ import {
 } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 import {menu} from '@/constants/Data'
+import FoodItems from "../components/FoodItems";
 
 const HotelScreen = () => {
   const router = useNavigation();
@@ -48,6 +49,9 @@ const HotelScreen = () => {
           <Text>35 - 40 min • 8Km | Pune</Text>
         </View>
       </View>
+      {menu.map((item, id) => (
+        <FoodItems key={id} item={item} />
+      ))}
     </ScrollView>
   );
 };
