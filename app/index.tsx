@@ -8,6 +8,8 @@ import LoginScreen from "@/app/(login)/index"; /// Import the LoginScreen
 import { View, Text, StyleSheet } from "react-native";
 import HomeScreen from "@/src/screens/HomeScreen";
 import HotelScreen from "@/src/screens/HotelScreen";
+import { Provider } from "react-redux";
+import store from "@/store";
 
 // Screen components
 const CartScreen = () => (
@@ -65,23 +67,25 @@ const MainTabs = () => {
 
 const Index = () => {
   return (
-    <Stack.Navigator initialRouteName="Main">
-      <Stack.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Main"
-        component={MainTabs}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="HotelScreen"
-        component={HotelScreen}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
+    <Provider store={store}>
+      <Stack.Navigator initialRouteName="Main">
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Main"
+          component={MainTabs}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HotelScreen"
+          component={HotelScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </Provider>
   );
 };
 

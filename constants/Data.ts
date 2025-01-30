@@ -179,19 +179,517 @@ export const menu: MenuCategory[] = [
 
 export const horizontalData: DataItem[] = [
   {
-    name: "Burger",
-    uri: "https://img.icons8.com/color/96/000000/hamburger.png",
-  },
-  {
-    name: "Biryani",
-    uri: "https://img.icons8.com/color/96/000000/rice-bowl.png",
-  },
-  { name: "Pizza", uri: "https://img.icons8.com/color/96/000000/pizza.png" },
-  {
-    name: "Ice Cream",
-    uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
-  },
-];
+      name: "Sandwich",
+      uri: "https://www.freepik.com/icon/sandwich_11792425#fromView=search&page=1&position=12&uuid=49a782ee-5cc6-42d6-a22f-5ccd43a3adf3",
+    },
+    {
+      name: "Burger",
+      uri: "https://img.icons8.com/color/96/000000/hamburger.png",
+    },
+    {
+      name: "Biryani",
+      uri: "https://www.freepik.com/icon/biryani_7667866#fromView=search&page=1&position=48&uuid=d8a831f0-f008-4561-9c4a-873e2f38c992",
+    },
+    { 
+      name: "Pizza",
+      uri: "https://img.icons8.com/color/96/000000/pizza.png" },
+    {
+      name: "Ice Cream",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Pastry",
+      uri: "https://www.freepik.com/icon/cake_1161626#fromView=keyword&page=1&position=6&uuid=6db20299-39ac-4987-8233-84579f27df8f",
+    },
+    {
+      name: "Cake",
+      uri: "https://www.freepik.com/icon/birthday-cake_2707522#fromView=keyword&page=1&position=24&uuid=6db20299-39ac-4987-8233-84579f27df8f",
+    },
+    {
+      name: "Chinese",
+      uri: "https://www.freepik.com/icon/cong-you-bing_7416298",
+    },
+    {
+      name: "Bowl",
+      uri: "https://www.freepik.com/icon/salad_12511229#fromView=search&page=1&position=20&uuid=29615ff2-7228-406a-bd37-c8c57d083379",
+    },
+    {
+      name: "Pav Bhaji",
+      uri: "https://www.freepik.com/search?format=search&iconType=standard&last_filter=query&last_value=PIZZA&query=PIZZA&type=icon",
+    },
+    {
+      name: "Italian",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Eggless Cake",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "South Indian",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Fries",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Dosa",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Paneer",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Khichadi",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Dal",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Soup",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Waffles",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Veg Biryani",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Desserts",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Samosa",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Falooda",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Poha",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Salad",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Chole Kulche",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Veg Momos",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Cupcake",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Kachori",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Upma",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Croissant",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Cookies",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Gulab Jamun",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Masala Maggi",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "PanCake",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Kulche",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Pakoda",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Tart",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Maffin",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Chop Suey",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Uttapam",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Bhurji",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Quesadilla",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Chaach",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Korma",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Chaap",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Rasmalai",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Rajma Rice",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Poori",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Misal Pav",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Kofta",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Mushrooms",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Jalebi",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Tea",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Malai Kofta",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Appam",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Fried Rice",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Rolls",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    }, 
+    {
+      name: "Gajar Halwa",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Noodles",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Paratha",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Thali",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "North Indian",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Momos",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Pasta",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Masala Maggi",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Shawarma",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Idli",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Fries",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Veg Meal",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Chaat",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Veg Thali",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Veg Rolls",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Sweets",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Rolls",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "North Indian",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Shake",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "South Indian",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Manchurian",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Coffee",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Juice",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Vada Pav",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Cold Coffee ",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Paneer Rolls",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Pulao",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "CheeseCake",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Brownie",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Lasagne",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Upma",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Croissant",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Cookies",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Nachos",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Puff Pastry",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Tiramisu",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Vada",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Tacos",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Halwa",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Kulche",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Cutlet",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Lassi",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Custard",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Tart",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Muffin",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Falafel",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Chop Suey",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Uttapam",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Doughnut",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Mousse",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Bhurji",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Sub",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Satay",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Burrito",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Parotta",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Sizzler",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Poori Bhaji",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Bhel",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Rasmalai",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Rajma Rice",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Paneer Kulche",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Hot Dog",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Kadhi",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Kebabs",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Chaap",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Aloo Tikki",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Veg lollipop",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Paneer Pakoda",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+    {
+      name: "Curd Rice",
+      uri: "https://img.icons8.com/color/96/000000/ice-cream.png",
+    },
+  ];
 
 export const hotels = [
   {

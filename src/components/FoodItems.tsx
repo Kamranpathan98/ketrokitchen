@@ -15,7 +15,7 @@ const FoodItems: React.FC<FoodItemsProps> = ({ item }) => {
       {data.map((item, index) => (
         <React.Fragment key={index}>
           <Pressable style={styles.container}>
-            <Text>
+            <Text style={styles.itemName}>
               {item.name} ({item.items.length})
             </Text>
             <AntDesign name="down" size={15} color="black" />
@@ -38,4 +38,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     margin: 10,
   },
+  itemName: {
+    fontSize: 19,
+    fontWeight: 'bold'
+  }
 });
