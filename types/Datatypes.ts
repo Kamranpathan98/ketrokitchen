@@ -50,7 +50,7 @@ export interface MenuItem {
   image: string;
   veg: boolean;
   bestSeller: boolean;
-  quantity?: number;
+  quantity: number;
 }
 
 // Define the type for a menu category

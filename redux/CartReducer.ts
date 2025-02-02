@@ -1,16 +1,9 @@
+import { MenuItem } from '@/types/Datatypes';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// Define the type for a cart item
-interface CartItem {
-    id: number; // or string, depending on your use case
-    name: string;
-    price: number;
-    quantity: number; // You can add more properties as needed
-}
-
 // Define the type for the cart state
-interface CartState {
-    cart: CartItem[];
+export interface CartState {
+    cart: MenuItem[];
 }
 
 // Initial state for the cart
@@ -23,7 +16,7 @@ const CartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addToCart: (state, action: PayloadAction<CartItem>) => {
+        addToCart: (state, action: PayloadAction<MenuItem>) => {
             const itemExist = state.cart.find((item) => item.id === action.payload.id);
             if (itemExist) {
                 itemExist.quantity += 1;
@@ -31,16 +24,16 @@ const CartSlice = createSlice({
                 state.cart.push({ ...action.payload, quantity: 1 });
             }
         },
-        removeFromCart: (state, action: PayloadAction<CartItem>) => {
+        removeFromCart: (state, action: PayloadAction<MenuItem>) => {
             state.cart = state.cart.filter(item => item.id !== action.payload.id);
         },
-        incrementQuantity: (state, action: PayloadAction<CartItem>) => {
+        incrementQuantity: (state, action: PayloadAction<MenuItem>) => {
             const itemExist = state.cart.find((item) => item.id === action.payload.id);
             if (itemExist) {
                 itemExist.quantity += 1;
             }
         },
-        decrementQuantity: (state, action: PayloadAction<CartItem>) => {
+        decrementQuantity: (state, action: PayloadAction<MenuItem>) => {
             const itemExist = state.cart.find((item) => item.id === action.payload.id);
             if (itemExist) {
                 if (itemExist.quantity > 1) {

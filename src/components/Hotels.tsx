@@ -14,7 +14,6 @@ interface HotelsProps {
 
 const Hotels: React.FC<HotelsProps> = ({ item }) => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>(); // Get the navigation object
-
   return (
     <Pressable
       onPress={() =>
