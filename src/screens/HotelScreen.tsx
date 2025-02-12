@@ -8,7 +8,7 @@ import {
   ViewStyle,
 } from "react-native";
 import React, { useRef, useState } from "react";
-import { RouteProp, useRoute, useNavigation } from "@react-navigation/native";
+import { RouteProp, useRoute, useNavigation, NavigationProp } from "@react-navigation/native";
 import { RootStackParamList } from "@/types/Datatypes";
 import {
   AntDesign,
@@ -23,10 +23,12 @@ import FoodItems from "../components/FoodItems";
 import { useSelector } from "react-redux";
 import { CartState } from "@/redux/CartReducer";
 import Modal from "react-native-modal";
+import { useSearchParams } from "expo-router/build/hooks";
 
 const HotelScreen = () => {
+  const params = useSearchParams();
   const cart = useSelector((state: { cart: CartState }) => state.cart.cart);
-  const router = useNavigation();
+  const router = useNavigation<NavigationProp<RootStackParamList>>();
   const route = useRoute<RouteProp<RootStackParamList, "HotelScreen">>();
   const { name, aggregate_rating, cuisines } = route.params;
 
@@ -62,6 +64,7 @@ const HotelScreen = () => {
     backgroundColor: Colors.light.goldenYellow,
   });
 
+  console.log(params, name)
   return (
     <>
       <ScrollView ref={scrollViewRef} style={styles.container}>
@@ -112,7 +115,10 @@ const HotelScreen = () => {
         ))}
       </View>
 
-      <Pressable style={getMenuContentStyle(cart.length)} onPress={() => setOpenModal(!openModal)}>
+      <Pressable
+        style={getMenuContentStyle(cart.length)}
+        onPress={() => setOpenModal(!openModal)}
+      >
         <Ionicons
           style={{ alignItems: "center" }}
           name="fast-food-outline"
@@ -123,7 +129,14 @@ const HotelScreen = () => {
       </Pressable>
 
       {cart.length > 0 && (
-        <Pressable style={styles.addCartContainer}>
+        <Pressable
+          style={styles.addCartContainer}
+          onPress={() => {
+            router.navigate("Cart", {
+              name: name
+            });
+          }}
+        >
           <Text style={styles.addItemText}>{cart.length} items added</Text>
           <Text style={styles.addItemText}>
             Add item(s) worth 240 to get free delivery
@@ -135,8 +148,8 @@ const HotelScreen = () => {
         <View style={styles.modalContainer}>
           {menu.map((items, index) => (
             <View key={index} style={styles.modalContent}>
-            <Text style={styles.modalTitle}>{items.name}</Text>
-            <Text style={styles.modalTitle}>{items.items.length}</Text>
+              <Text style={styles.modalTitle}>{items.name}</Text>
+              <Text style={styles.modalTitle}>{items.items.length}</Text>
             </View>
           ))}
           {/* <Text style={styles.modalTitle}>Menu</Text>
@@ -251,20 +264,20 @@ const styles = StyleSheet.create({
     position: "absolute",
     backgroundColor: Colors.light.darkGreen,
     bottom: 45,
-    right:10,
-    borderRadius:7
+    right: 10,
+    borderRadius: 7,
   },
   modalContent: {
     padding: 15,
     alignItems: "center",
     flexDirection: "row",
-    justifyContent: 'space-between'
+    justifyContent: "space-between",
   },
   modalTitle: {
-   color: Colors.light.goldenYellow,
-  // color: "white",
-   fontSize: 18,
-   fontWeight: '600'
+    color: Colors.light.goldenYellow,
+    // color: "white",
+    fontSize: 18,
+    fontWeight: "600",
   },
   closeButton: {
     color: "blue",

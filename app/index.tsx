@@ -10,13 +10,8 @@ import HomeScreen from "@/src/screens/HomeScreen";
 import HotelScreen from "@/src/screens/HotelScreen";
 import { Provider } from "react-redux";
 import store from "@/store";
-
-// Screen components
-const CartScreen = () => (
-  <View style={styles.screen}>
-    <Text>Cart Screen</Text>
-  </View>
-);
+import CartScreen from "@/src/screens/CartScreen";
+import OrderScreen from "@/src/screens/OrderScreen";
 
 const ProfileScreen = () => (
   <View style={styles.screen}>
@@ -82,6 +77,16 @@ const Index = () => {
         <Stack.Screen
           name="HotelScreen"
           component={HotelScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Cart"
+          component={CartScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Order"
+          component={OrderScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

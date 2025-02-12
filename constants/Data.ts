@@ -1,4 +1,4 @@
-import { DataItem, MenuCategory } from "@/types/Datatypes";
+import { DataItem, Instructions, MenuCategory } from "@/types/Datatypes";
 
 export const dataTest: DataItem[] = [
   {
@@ -124,53 +124,49 @@ export const menu: MenuCategory[] = [
         id: "201",
         name: "Chicken Fried Rice",
         price: 260,
-        description:
-          "E: 1142.26 KCal (163.18 KCal), C: 125.05 Grams (17.86 Grams), P: 40.11 Grams (5.73 Grams), F: 51.37 Grams (7.34 Grams)",
+        description: "E: 1142.26 KCal (163.18 KCal), C: 125.05 Grams (17.86 Grams), P: 40.11 Grams (5.73 Grams), F: 51.37 Grams (7.34 Grams)",
         rating: 4.3,
         ratings: 34,
-        image:
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/akmx533z73jjbq8avy6v",
+        image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/akmx533z73jjbq8avy6v",
         veg: false,
         bestSeller: true,
+        quantity: 0
       },
       {
         id: "202",
         name: "Egg Fried Rice",
         price: 220,
-        description:
-          "E: 1729.51 KCal (164.72 KCal), C: 204.54 Grams (19.48 Grams), P: 44.03 Grams (4.19 Grams), F: 79.02 Grams (7.53 Grams)",
+        description: "E: 1729.51 KCal (164.72 KCal), C: 204.54 Grams (19.48 Grams), P: 44.03 Grams (4.19 Grams), F: 79.02 Grams (7.53 Grams)",
         rating: 4.3,
         ratings: 52,
-        image:
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/lv6jl9qdscekjmwkxm9l",
+        image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/lv6jl9qdscekjmwkxm9l",
         veg: false,
         bestSeller: false,
+        quantity: 0
       },
       {
         id: "203",
         name: "Veg Fried Rice",
         price: 190,
-        description:
-          "E: 1477.00 KCal (140.67 KCal), C: 204.14 Grams (19.44 Grams), P: 22.90 Grams (2.18 Grams), F: 59.95 Grams (5.71 Grams)",
+        description: "E: 1477.00 KCal (140.67 KCal), C: 204.14 Grams (19.44 Grams), P: 22.90 Grams (2.18 Grams), F: 59.95 Grams (5.71 Grams)",
         rating: 4.6,
         ratings: 56,
-        image:
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/pycpbzawueci1dvhmkr3",
+        image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/pycpbzawueci1dvhmkr3",
         veg: true,
         bestSeller: true,
+        quantity: 0
       },
       {
         id: "204",
         name: "Jeera Rice",
         price: 195,
-        description:
-          "E: 1832.30 KCal (174.50 KCal), C: 246.73 Grams (23.50 Grams), P: 27.51 Grams (2.62 Grams), F: 78.15 Grams (7.44 Grams)",
+        description: "E: 1832.30 KCal (174.50 KCal), C: 246.73 Grams (23.50 Grams), P: 27.51 Grams (2.62 Grams), F: 78.15 Grams (7.44 Grams)",
         rating: 4.5,
         ratings: 48,
-        image:
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/xukq8swrwct8usmg4cjv",
+        image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/xukq8swrwct8usmg4cjv",
         veg: true,
         bestSeller: false,
+        quantity: 0
       },
     ],
   },
@@ -1028,3 +1024,26 @@ export const hotels = [
     time: "22 min",
   },
 ];
+
+export const instructions : Instructions[] = [
+  {
+    id: "0",
+    name: "Avoid Ringing",
+    iconName: "bell"
+  },
+  {
+    id: "1",
+    name: "Leave at the door",
+    iconName: "door-open"
+  },
+  {
+    id: "2",
+    name: "Directions to reach",
+    iconName: "directions"
+  },
+  {
+    id: "3",
+    name: "Avoid Calling",
+    iconName: "phone-alt"
+  },
+]

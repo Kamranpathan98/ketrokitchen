@@ -38,6 +38,9 @@ export type RootStackParamList = {
     aggregate_rating: number; 
   }; // Define the parameters for HotelScreen
   // Add other screens here
+  Cart: {
+    name: string | null;
+  };
 };
 
 export interface MenuItem {
@@ -58,4 +61,10 @@ export interface MenuCategory {
   id: string;
   name: string;
   items: MenuItem[];
+}
+
+export interface Instructions {
+  id: string;
+  name: string;
+  iconName: string;
 }
