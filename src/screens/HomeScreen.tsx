@@ -3,7 +3,6 @@ import React from "react";
 import HeaderBar from "../components/HeaderBar";
 import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
-import Carosuel from "@/src/components/Carosuel";
 import OfferSlider from "../components/OfferSlider";
 import { FlatList } from "react-native-gesture-handler";
 import Categories from "../components/Categories";

@@ -28,150 +28,189 @@ const CartScreen = () => {
   const cart = useSelector((state: { cart: CartState }) => state.cart.cart);
   const router = useNavigation<NavigationProp<RootStackParamList>>();
   const route = useRoute<RouteProp<RootStackParamList, "HotelScreen">>();
-  const { name } = route.params;
+  const { name } = route.params ?? "";
   const dispatch = useDispatch();
 
   const totalPrice = cart
     .map((item) => item.quantity * item.price)
     .reduce((current, prev) => current + prev, 0);
-  console.log(totalPrice);
+
+  const isCartEmpty = cart.length === 0 || !name;
+  console.log(isCartEmpty, cart.length)
   return (
     <>
-      <ScrollView style={styles.cartContainer}>
-        <View style={styles.cartContent}>
-          <Ionicons
-            onPress={() => router.goBack()}
-            style={styles.cheveronIcon}
-            name="chevron-back"
-            size={28}
-            color="black"
-          />
-          <Text>{name}</Text>
+      {isCartEmpty ? (
+        <View style={styles.emptyCartContainer}>
+          <MaterialCommunityIcons name="cart-off" size={50} color="gray" />
+          <Text style={styles.emptyCartText}>Cart is Empty</Text>
         </View>
-        <View style={styles.deliveryStatus}>
-          <Text>
-            Delivery in <Text style={{ fontWeight: "500" }}>30 - 40 mins</Text>
-          </Text>
-        </View>
-        <View style={styles.itemContainer}>
-          <Text style={styles.itemContentHeader}>ITEM(S) ADDED</Text>
-        </View>
-        <View>
-          {cart.map((item, id) => (
-            <Pressable key={`item-added-${id}`} style={styles.cartQuantity}>
-              <View style={styles.cartView}>
-                <Text style={styles.itemName}>{item.name}</Text>
-                <Pressable style={styles.quantityContainer}>
-                  <Pressable onPress={() => dispatch(decrementQuantity(item))}>
-                    <Text style={styles.minusItems}>-</Text>
+      ) : (
+        <ScrollView style={styles.cartContainer}>
+          <View style={styles.cartContent}>
+            <Ionicons
+              onPress={() => router.goBack()}
+              style={styles.cheveronIcon}
+              name="chevron-back"
+              size={28}
+              color="black"
+            />
+            <Text>{name}</Text>
+          </View>
+          <View style={styles.deliveryStatus}>
+            <Text>
+              Delivery in{" "}
+              <Text style={{ fontWeight: "500" }}>30 - 40 mins</Text>
+            </Text>
+          </View>
+          <View style={styles.itemContainer}>
+            <Text style={styles.itemContentHeader}>ITEM(S) ADDED</Text>
+          </View>
+          <View>
+            {cart.map((item, id) => (
+              <Pressable key={`item-added-${id}`} style={styles.cartQuantity}>
+                <View style={styles.cartView}>
+                  <Text style={styles.itemName}>{item.name}</Text>
+                  <Pressable style={styles.quantityContainer}>
+                    <Pressable
+                      onPress={() => dispatch(decrementQuantity(item))}
+                    >
+                      <Text style={styles.minusItems}>-</Text>
+                    </Pressable>
+                    <Pressable>
+                      <Text style={styles.totalItems}>{item.quantity}</Text>
+                    </Pressable>
+                    <Pressable
+                      onPress={() => dispatch(incrementQuantity(item))}
+                    >
+                      <Text style={styles.plusItems}>+</Text>
+                    </Pressable>
                   </Pressable>
-                  <Pressable>
-                    <Text style={styles.totalItems}>{item.quantity}</Text>
-                  </Pressable>
-                  <Pressable onPress={() => dispatch(incrementQuantity(item))}>
-                    <Text style={styles.plusItems}>+</Text>
-                  </Pressable>
-                </Pressable>
-              </View>
-              <View style={styles.priceContent}>
-                <Text style={styles.priceText}>
-                  ₹{item.price * item.quantity}
-                </Text>
-                <Text style={styles.priceDesc}>Quantity : {item.quantity}</Text>
-              </View>
-            </Pressable>
-          ))}
+                </View>
+                <View style={styles.priceContent}>
+                  <Text style={styles.priceText}>
+                    ₹{item.price * item.quantity}
+                  </Text>
+                  <Text style={styles.priceDesc}>
+                    Quantity : {item.quantity}
+                  </Text>
+                </View>
+              </Pressable>
+            ))}
 
-          <View style={{ marginVertical: 10 }}>
-            <Text style={styles.priceText}>Delivery Instrctions</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              {instructions.map((item, id) => (
-                <Pressable
-                  key={`inst-${id}`}
-                  style={styles.deliveryInstructions}
-                >
-                  <View
-                    key={`instContent-${id}`}
-                    style={{ justifyContent: "center", alignItems: "center" }}
+            <View style={{ marginVertical: 10 }}>
+              <Text style={styles.priceText}>Delivery Instrctions</Text>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                {instructions.map((item, id) => (
+                  <Pressable
+                    key={`inst-${id}`}
+                    style={styles.deliveryInstructions}
                   >
-                    <FontAwesome5
-                      name={item.iconName}
-                      color={"gray"}
-                      size={22}
-                    />
-                    <Text style={styles.deliveryText}>{item.name}</Text>
-                  </View>
-                </Pressable>
-              ))}
-            </ScrollView>
+                    <View
+                      key={`instContent-${id}`}
+                      style={{ justifyContent: "center", alignItems: "center" }}
+                    >
+                      <FontAwesome5
+                        name={item.iconName}
+                        color={"gray"}
+                        size={22}
+                      />
+                      <Text style={styles.deliveryText}>{item.name}</Text>
+                    </View>
+                  </Pressable>
+                ))}
+              </ScrollView>
+            </View>
+
+            <View key={`price`}>
+              <View key={`price-1`} style={styles.moreItemSection}>
+                <View style={styles.moreItemSectionContent}>
+                  <Feather name="plus-circle" size={24} color="black" />
+                  <Text>Add more Items</Text>
+                </View>
+                <AntDesign name="right" size={20} color={"black"} />
+              </View>
+
+              <View key={`price-2`} style={styles.moreItemSection}>
+                <View style={styles.moreItemSectionContent}>
+                  <Entypo name="new-message" size={24} color="black" />
+                  <Text>Add more Coooking Instructions</Text>
+                </View>
+                <AntDesign name="right" size={20} color={"black"} />
+              </View>
+
+              <View key={`price-3`} style={styles.moreItemSection}>
+                <View style={styles.moreItemSectionContent}>
+                  <MaterialCommunityIcons
+                    name="food-fork-drink"
+                    size={24}
+                    color="black"
+                  />
+                  <Text>Add more Items</Text>
+                </View>
+                <AntDesign name="right" size={20} color={"black"} />
+              </View>
+            </View>
+
+            <View style={{ marginVertical: 15 }}>
+              <Text style={styles.priceText}>Billing Details</Text>
+              <View style={styles.priceContainer}>
+                <View style={styles.priceContent}>
+                  <Text style={styles.totalPrice}>Item Total</Text>
+                  <Text style={styles.totalPrice}>₹{totalPrice}</Text>
+                </View>
+                <View style={styles.priceContent}>
+                  <Text style={styles.totalPrice}>Handling fees</Text>
+                  <Text style={styles.totalPrice}>₹15.00</Text>
+                </View>
+                <View style={styles.priceContent}>
+                  <Text style={styles.totalPrice}>Delivery Partner fees</Text>
+                  <Text style={styles.totalPrice}>₹75</Text>
+                </View>
+                <View style={styles.priceContent}>
+                  <Text style={styles.priceText}>To Pay</Text>
+                  <Text style={styles.priceText}>₹{totalPrice + 90}</Text>
+                </View>
+              </View>
+            </View>
           </View>
-
-          <View key={`price`}>
-            <View key={`price-1`} style={styles.moreItemSection}>
-              <View style={styles.moreItemSectionContent}>
-                <Feather name="plus-circle" size={24} color="black" />
-                <Text>Add more Items</Text>
-              </View>
-              <AntDesign name="right" size={20} color={"black"} />
-            </View>
-
-            <View key={`price-2`} style={styles.moreItemSection}>
-              <View style={styles.moreItemSectionContent}>
-                <Entypo name="new-message" size={24} color="black" />
-                <Text>Add more Coooking Instructions</Text>
-              </View>
-              <AntDesign name="right" size={20} color={"black"} />
-            </View>
-
-            <View key={`price-3`} style={styles.moreItemSection}>
-              <View style={styles.moreItemSectionContent}>
-                <MaterialCommunityIcons
-                  name="food-fork-drink"
-                  size={24}
-                  color="black"
-                />
-                <Text>Add more Items</Text>
-              </View>
-              <AntDesign name="right" size={20} color={"black"} />
-            </View>
-          </View>
-
-          <View style={{ marginVertical: 15 }}>
-            <Text style={styles.priceText}>Billing Details</Text>
-            <View style={styles.priceContainer}>
-              <View style={styles.priceContent}>
-                <Text style={styles.totalPrice}>Item Total</Text>
-                <Text style={styles.totalPrice}>₹{totalPrice}</Text>
-              </View>
-              <View style={styles.priceContent}>
-                <Text style={styles.totalPrice}>Handling fees</Text>
-                <Text style={styles.totalPrice}>₹15.00</Text>
-              </View>
-              <View style={styles.priceContent}>
-                <Text style={styles.totalPrice}>Delivery Partner fees</Text>
-                <Text style={styles.totalPrice}>₹75</Text>
-              </View>
-              <View style={styles.priceContent}>
-                <Text style={styles.priceText}>To Pay</Text>
-                <Text style={styles.priceText}>₹{totalPrice + 90}</Text>
-              </View>
-            </View>
-          </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
+      )}
 
       {totalPrice === 0 ? null : (
         <Pressable style={styles.footerContainer}>
           <View>
             <Text style={styles.priceText}>Pay using cash</Text>
-            <Text style={{fontSize: 15, marginTop: 8}}>Cash on Delivery</Text>
+            <Text style={{ fontSize: 15, marginTop: 8 }}>Cash on Delivery</Text>
           </View>
-          <Pressable style={styles.footerButton}>
+          <Pressable style={styles.footerButton} onPress={() => router.navigate("Order", {
+            name: name
+          })} >
             <View>
-              <Text style={{color: "white", fontSize: 15, fontWeight: "bold"}}>{totalPrice + 90}</Text>
-              <Text style={{color: "white", fontSize: 15, fontWeight: "500", marginTop: 3}}>TOTAL</Text>
+              <Text
+                style={{ color: "white", fontSize: 15, fontWeight: "bold" }}
+              >
+                {totalPrice + 90}
+              </Text>
+              <Text
+                style={{
+                  color: "white",
+                  fontSize: 15,
+                  fontWeight: "500",
+                  marginTop: 3,
+                }}
+              >
+                TOTAL
+              </Text>
             </View>
-            <Text style={{color: Colors.light.goldenYellow, fontSize: 15, fontWeight: "500"}}>Place Order</Text>
+            <Text
+              style={{
+                color: Colors.light.goldenYellow,
+                fontSize: 15,
+                fontWeight: "500",
+              }}
+            >
+              Place Order
+            </Text>
           </Pressable>
         </Pressable>
       )}
@@ -310,7 +349,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     padding: 20,
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   footerButton: {
     backgroundColor: Colors.light.darkGreen,
@@ -320,6 +359,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    gap:10
-  }
+    gap: 10,
+  },
+  emptyCartContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F0F8FF",
+  },
+  emptyCartText: {
+    fontSize: 20,
+    color: "gray",
+    marginTop: 10,
+  },
 });

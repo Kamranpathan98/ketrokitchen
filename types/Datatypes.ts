@@ -41,6 +41,10 @@ export type RootStackParamList = {
   Cart: {
     name: string | null;
   };
+
+  Order: {
+    name: string | null;
+  };
 };
 
 export interface MenuItem {
